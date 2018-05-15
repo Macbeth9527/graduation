@@ -22,13 +22,13 @@
     <section class="boxed-sm">
         <div class="container">
             <div class="woocommerce">
-                <form class="woocommerce-cart-form">
+                <form class="woocommerce-cart-form" action="foreBuy" method="post">
                     <table class="woocommerce-cart-table">
                         <thead>
                         <tr>
                             <th class="product-thumbnail">商品</th>
                             <th class="product-name"></th>
-                            <th class="product-weight">Weight</th>
+                            <th class="product-weight">重量</th>
                             <th class="product-quantity">数量</th>
                             <th class="product-price">价格</th>
                             <th class="product-subtotal">小计</th>
@@ -39,7 +39,7 @@
                         <c:forEach items="${orderItems}" var="ois">
                             <tr>
                                 <td class="product-thumbnail ">
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="oiid" value="${ois.id}">
                                     <img src="${pageContext.request.contextPath}/img/productSingle_small/${ois.product.firstProductImage.id}.jpg" alt="${ois.product.name}">
                                 </td>
                                 <td class="product-name" data-title="Product">
@@ -57,47 +57,19 @@
                             </tr>
                         </c:forEach>
                         </tbody>
-                        <%--<tfoot>
+                        <tfoot>
                         <tr>
                             <td colspan="7">
                                 <div class="form-coupon organic-form">
-                                    <div class="form-group">
-                                        <input class="form-control pill" placeholder="Coupon Code">
-                                    </div>
-                                    <div class="form-group">
-                                        <a class="btn btn-brand pill" href="#">APPLY COUPON</a>
-                                    </div>
                                     <div class="form-group update-cart">
-                                        <a class="btn btn-brand-ghost pill">UPDATE CART</a>
+                                        <button class="btn btn-brand-ghost pill" type="submit">支付</button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                        </tfoot>--%>
+                        </tfoot>
                     </table>
                 </form>
-                <div class="cart_totals">
-                    <h3 class="title">总计</h3>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <table class="woocommerce-cart-subtotal">
-                                <tbody>
-                                <tr>
-                                    <th>Subtotal</th>
-                                    <td data-title="Subtotal">$0</td>
-                                </tr>
-                                <tr>
-                                    <th>Total</th>
-                                    <td data-title="Total">$0</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="proceed-to-checkout">
-                                <a class="btn btn-brand pill" href="#">PROCEED TO CHECKOUT</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

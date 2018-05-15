@@ -17,4 +17,5 @@ public interface OrderService extends AbstractService<Order> {
 
     float add(Order o,List<OrderItem> ois);
     List list();
+    List list(int uid, String excludedStatus);
 }

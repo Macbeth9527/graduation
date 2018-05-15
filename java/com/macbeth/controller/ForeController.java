@@ -40,9 +40,15 @@ public class ForeController {
     OrderService orderService;
 
     @RequestMapping("foreHome")
-    public String home(Model model) throws ArrayIndexOutOfBoundsException{
+    public String home(Model model) {
         List<Category> categories = categoryService.list();
-        List<Product> products = productService.list().subList(0, 4);
+        List<Product> products = null;
+        try {
+            products = productService.list().subList(0, 4);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
+
         model.addAttribute("cs", categories);
         model.addAttribute("ps", products);
         return "fore/home";
@@ -280,25 +286,28 @@ public class ForeController {
         }
         return null;
     }
+
     @RequestMapping(value = "foreCreateOrder")
-    public String createOrder(HttpSession session,Order order,Model model){
+    public String createOrder(HttpSession session, Order order, Model model) {
         User user = (User) session.getAttribute("user");
-        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date())+RandomUtils.nextInt();
+        String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + RandomUtils.nextInt();
         order.setOrderCode(orderCode);
         order.setCreateDate(new Date());
         order.setStatus(orderService.waitPay);
         order.setUid(user.getId());
-        List<OrderItem> ois= (List<OrderItem>) session.getAttribute("orderItems");
-        float total =orderService.add(order,ois);
-        return "redirect:foreAliPay?oid="+order.getId() +"&total="+total;
+        List<OrderItem> ois = (List<OrderItem>) session.getAttribute("orderItems");
+        float total = orderService.add(order, ois);
+        return "redirect:foreAliPay?oid=" + order.getId() + "&total=" + total;
 
     }
+
     @RequestMapping("foreAliPay")
-    public String aliPay(Model model,int oid,float total){
-        model.addAttribute("oid",oid);
-        model.addAttribute("total",total);
+    public String aliPay(Model model, int oid, float total) {
+        model.addAttribute("oid", oid);
+        model.addAttribute("total", total);
         return "fore/aliPay";
     }
+
     @RequestMapping("forePayed")
     public String payed(int oid, float total, Model model) {
         Order order = orderService.get(oid);
@@ -308,8 +317,41 @@ public class ForeController {
         model.addAttribute("o", order);
         return "fore/payed";
     }
+
     @RequestMapping("foreFAQ")
-    public String faq(){
+    public String faq() {
         return "fore/faq";
+    }
+
+    @RequestMapping("foreMyHome")
+    public String myHome(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        List<Order> os = orderService.list(user.getId(), OrderService.delete);
+
+        orderItemService.fill(os);
+
+        model.addAttribute("os", os);
+        return "fore/myHome";
+    }
+
+    @RequestMapping("foreReview")
+    public String review(Model model, int oid) {
+        Order o = orderService.get(oid);
+        orderItemService.fill(o);
+        Product p = o.getOrderItems().get(0).getProduct();
+        productService.setSaleAndReviewNumber(p);
+        model.addAttribute("p", p);
+        model.addAttribute("o", o);
+        return "fore/review";
+    }
+
+    @RequestMapping("foreConfirmPay")
+    public String confirmPay(int oid) {
+        Order o = orderService.get(oid);
+        orderItemService.fill(o);
+        o.setStatus(OrderService.waitReview);
+        o.setConfirmDate(new Date());
+        orderService.update(o);
+        return "redirect:/foreMyHome";
     }
 }

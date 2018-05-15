@@ -24,16 +24,6 @@
                 <div class="row">
                     <div class="woocommerce-top-control">
                         <p class="woocommerce-result-count">共 ${page.total} 条记录</p>
-                        <form class="woocommerce-ordering select-custom-wrapper" method="get" action="shopList" id="sortForm">
-                            <select class="orderby select-custom-wrapper" name="sort">
-                                <option value="priceDesc">价格降序</option>
-                                <option value="date">最新上架</option>
-                                <option value="popularity">最受欢迎</option>
-                                <option value="rating">综合排序</option>
-                                <option value="price">价格升序</option>
-
-                            </select>
-                        </form>
                     </div>
                 </div>
             </div>

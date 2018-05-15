@@ -330,7 +330,6 @@ div.footer {
 	margin: 0px 0px;
 	border-top-style: solid;
 	border-top-width: 1px;
-	border-top-color: solid;
 	border-top-color: #e7e7e7;
 }
 
@@ -379,7 +378,6 @@ div.copyright {
 	background-color: black;
 	border-top-style: solid;
 	border-top-width: 2px;
-	border-top-color: solid;
 	border-top-color: #C40000;
 }
 
@@ -603,7 +601,7 @@ div.productUnit span.productReview {
 div.productUnit a.productLink {
 	margin: 10px 0px;
 	color: #333333;
-	font: 0.8em;
+
 	display: block;
 }
 
@@ -615,7 +613,6 @@ div.productUnit a.productLink:hover {
 div.productUnit a.tmallLink {
 	margin: 10px 0px;
 	color: #999999;
-	font: 0.8em;
 	display: block;
 	text-decoration: underline;
 }
@@ -775,13 +772,6 @@ div.infoInimgAndInfo div.originalDiv {
 
 div.infoInimgAndInfo div.promotionDiv {
 	margin-top: 0px;
-}
-
-div.infoInimgAndInfo div.productPriceDiv {
-	background-image: url(../../img/site/priceBackground.png);
-	height: 102px;
-	padding: 10px;
-	color: #666666;
 }
 
 div.infoInimgAndInfo span.originalPriceDesc {
@@ -1006,10 +996,7 @@ span.productReviewTopReviewLinkNumber {
 	color: #3355B9;
 }
 
-div.productDetailImagesPart img {
-	display: block; margin 20px 0px;
-	width: 790px;
-}
+
 
 a.productReviewTopPartSelectedLink {
 	padding: 0px 20px;
@@ -1173,19 +1160,7 @@ a.marketLink:hover {
 	font-weight: normal;
 }
 
-span.wangwangGif {
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	background-image: url(../../img/site/wangwang.gif);
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-attachment: scroll;
-	background-position: -83px -0px;
-	position: relative;
-	top: 8px;
-	left: 2px;
-}
+
 
 table.productListTable {
 	width: 100%;
@@ -1300,13 +1275,13 @@ textarea.leaveMessageTextarea {
 }
 
 span.leaveMessageText {
-	display: inilne-block;
+<!--display: inilne-block;-->
 	margin-right: 10px;
 	float: left;
 }
 
 span.leaveMessageTextareaSpan {
-	display: inilne-block;
+	<!--display: inilne-block;-->
 }
 
 div.orderItemTotalSumDiv {
@@ -1404,18 +1379,7 @@ div.payedAddressInfo {
 	padding: 26px 35px;
 }
 
-div.payedAddressInfo li {
-	background-image: url("../../img/site/li_dot.png");
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-attachment: scroll;
-	background-position: 0px 13px;
-	list-style-type: none;
-	color: #333333;
-	padding-left: 15px;
-	padding-top: 5px;
-	/* 	background: rgba(0, 0, 0, 0) url("../../img/site/li_dot.png") no-repeat scroll 0 13px; */
-}
+
 
 span.payedInfoPrice {
 	color: #B10000;
@@ -1588,17 +1552,7 @@ span.cartSumPrice {
 	font-size: 20px;
 }
 
-div.cartFoot button {
-	background-color: #AAAAAA;
-	border: 0px solid #AAAAAA;
-	color: white;
-	height: height%;
-	width: 120px;
-	height: 50px;
-	font-size: 20px;
-	text-align: center;
-	/* 	border-radius: 2px; */
-}
+
 
 div.boughtDiv {
 	max-width: 1013px;
@@ -1675,19 +1629,7 @@ table.orderListItemTable td {
 	padding: 8px 10px;
 }
 
-div.orderItemWangWangGif {
-	display: inline-block;
-	width: 67px;
-	height: 22px;
-	background-image: url(../../img/site/wangwang.gif);
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-attachment: scroll;
-	background-position: -0px -0px;
-	position: relative;
-	top: 0px;
-	left: 2px;
-}
+
 
 span.orderListItemDelete {
 	display: inline-block;
@@ -1886,19 +1828,7 @@ div.confirmPayOrderDetailDiv {
 	margin: 40px;
 }
 
-span.confirmPayOrderDetailWangWangGif {
-	display: inline-block;
-	width: 67px;
-	height: 22px;
-	background-image: url(../../img/site/wangwang.gif);
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-attachment: scroll;
-	background-position: -0px -0px;
-	position: relative;
-	top: 0px;
-	left: 2px;
-}
+
 
 div.confirmPayButtonDiv {
 	border: 1px solid #F58B0F;
@@ -1993,16 +1923,7 @@ div.reviewProductInfoRightBelowDiv {
 	padding: 16px 81px;
 }
 
-span.reviewProductInfoRightBelowImg {
-	background-color: white;
-	border: 1px solid #E1E1E1;
-	display: inline-block;
-	width: 23px;
-	height: 42px;
-	background-image: url(../../img/site/reviewLight.png);
-	background-repeat: no-repeat;
-	padding: 0px;
-}
+
 
 span.reviewProductInfoRightBelowText {
 	border: 1px solid #EFEFEF;

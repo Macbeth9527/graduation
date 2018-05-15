@@ -12,10 +12,9 @@
     <ul>
         <li><a href="foreHome">主页</a></li>
         <li><a href="foreShopList">所有商品</a></li>
-        <li><a href="#">Shop Detail</a><li>
-        <li><a href="#">Wishlist</a></li>
-        <li><a href="nowhere">购物车</a></li>
-        <li><a href="#">Checkout</a></li>
+        <li><a href="foreMyHome">个人中心</a><li>
+        <li><a href="foreShopCart">购物车</a></li>
+
     </ul>
 </nav>
 <header class="header-style-1">
@@ -30,10 +29,8 @@
                     <ul class="menu hidden-xs">
                         <li><a href="foreHome">主页</a></li>
                         <li><a href="foreShopList">所有商品</a></li>
-                        <li><a href="#">Shop Detail</a><li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#nowhere">购物车</a></li>
-                        <li><a href="#">Checkout</a></li>
+                        <li><a href="foreMyHome">个人中心</a><li>
+                        <li><a href="foreShopCart">购物车</a></li>
                     </ul>
                 </nav>
                 <aside class="right">
