@@ -24,7 +24,7 @@
         <a href="foreHome">
             <button type="button" class="btn btn-info">回到主页</button>
         </a>
-        <a href="#">
+        <a href="foreMyHome">
             <button type="button" class="btn btn-info">返回个人中心</button>
         </a>
         <a href="foreShopCart">

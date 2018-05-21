@@ -16,7 +16,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> list() {
         CategoryExample example =new CategoryExample();
-        example.setOrderByClause("id desc");
+        example.setOrderByClause("id desc")
+
+
+        ;
         return categoryMapper.selectByExample(example);
     }
 

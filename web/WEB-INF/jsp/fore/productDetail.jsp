@@ -16,7 +16,9 @@
         var num = $("#productNumber");
 
         $(".minus").click(function () {
+
             num.val(parseInt(num.val()) - 1);
+
         });
         $(".plus").click(function () {
             num.val(parseInt(num.val()) + 1);
@@ -41,14 +43,16 @@
                             <div class="main-carousel">
 
                                 <div class="item">
-                                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/productSingle/${p.firstProductImage.id}.jpg"
+                                    <img class="img-responsive"
+                                         src="${pageContext.request.contextPath}/img/productSingle/${p.firstProductImage.id}.jpg"
                                          alt="product thumbnail">
                                 </div>
                             </div>
                             <div class="thumbnail-carousel">
 
                                 <div class="item">
-                                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/productSingle/${p.firstProductImage.id}.jpg"
+                                    <img class="img-responsive"
+                                         src="${pageContext.request.contextPath}/img/productSingle/${p.firstProductImage.id}.jpg"
                                          alt="product thumbnail">
                                 </div>
 
@@ -146,7 +150,8 @@
                                         <li>
                                             <div class="the-comment">
                                                 <div class="avatar">
-                                                    <img class="avatar" alt="avatar" src="${pageContext.request.contextPath}/images/comment/01.png">
+                                                    <img class="avatar" alt="avatar"
+                                                         src="${pageContext.request.contextPath}/images/comment/01.png">
                                                 </div>
                                                 <div class="comment-box">
                                                     <div class="comment-author meta">
